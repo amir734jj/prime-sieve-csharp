@@ -24,7 +24,7 @@ namespace Sieve
 
                     if (factor < n)
                     {
-                        array[i + j + 2 * i * j] = false;
+                        array[factor] = false;
                     }
                     else
                     {
