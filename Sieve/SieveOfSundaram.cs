@@ -14,7 +14,7 @@ namespace Sieve
     {
         public IEnumerable<int> Calculate(int n)
         {
-            var array = new BitArray(n, true) {[0] = false, [1] = true};
+            var array = new BitArray(n, true) {[0] = false, [1] = false};
 
             for (var i = 1; i < n; i++)
             {
@@ -33,7 +33,7 @@ namespace Sieve
                 }
             }
 
-            return new[] {2}.Concat(array.CollectBitArray().Select(x => x * 2 + 1).TakeWhile(x => x < n));
+            return new[] {2, 3}.Concat(array.CollectBitArray().Select(x => x * 2 + 1).TakeWhile(x => x < n));
         }
     }
 }
