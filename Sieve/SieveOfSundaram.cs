@@ -18,7 +18,9 @@ namespace Sieve
 
             for (var i = 1; i < n; i++)
             {
-                for (var j = 1; j < n; j++)
+                var flag = true;
+
+                for (var j = 1; j < n && flag; j++)
                 {
                     var factor = i + j + 2 * i * j;
 
@@ -28,7 +30,7 @@ namespace Sieve
                     }
                     else
                     {
-                        break;
+                        flag = false;
                     }
                 }
             }
